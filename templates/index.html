@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPIO Control</title>
+</head>
+<body>
+    <h1>Control GPIO Pins</h1>
+    <form method="POST">
+        {% for pin in pins %}
+            <label>Pin {{ pin }}:</label>
+            <select name="{{ pin }}">
+                <option value="1">ON</option>
+                <option value="0">OFF</option>
+            </select>
+            <br>
+        {% endfor %}
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
