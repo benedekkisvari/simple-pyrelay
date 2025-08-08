@@ -9,9 +9,10 @@
         {% for pin in pins %}
             <label>Pin {{ pin }}:</label>
             <select name="{{ pin }}">
-                <option value="1">ON</option>
-                <option value="0">OFF</option>
+                <option value="1" {% if current_status[pin] == 1 %}selected{% endif %}>ON</option>
+                <option value="0" {% if current_status[pin] == 0 %}selected{% endif %}>OFF</option>
             </select>
+            <span>Current Status: {{ 'ON' if current_status[pin] == 1 else 'OFF' }}</span>
             <br>
         {% endfor %}
         <input type="submit" value="Update">
